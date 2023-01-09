@@ -191,8 +191,8 @@ control_button.addEventListener("click", () => {
         if (update == false) {
             myFetch(`${url}/control`, "POST",{
                 control_name: control_name.value,
-                control_pin: control_pin.value,
-                control_value: control_value.value,
+                control_pin: parseInt(control_pin.value),
+                control_value: parseInt(control_value.value),
             }).then(res => console.log(res))
             alert("Create data successfully");
         }
@@ -200,8 +200,8 @@ control_button.addEventListener("click", () => {
         if (update == true) {
             myFetch(`${url}/control/${update_control_id}`, "PUT",{
                 control_name: control_name.value,
-                control_pin: control_pin.value,
-                control_value: control_value.value,
+                control_pin: parseInt(control_pin.value),
+                control_value: parseInt(control_value.value),
             }).then(res => console.log(res))
             alert("Update data successfully");
         }
