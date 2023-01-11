@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Muhammad Ikhwan Fathulloh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -64, "left": -42.67, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -44.8,
+      "left": 105.13,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -43.64,
+      "left": 140.74,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -43.69,
+      "left": 191.59,
+      "attrs": { "temperature": "57.4", "humidity": "91" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -116.8,
+      "left": 69.53,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:D5", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led2:A", "esp:D18", "red", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led3:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led3:A", "esp:D19", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -229,4 +229,4 @@ function controlStatus(value, id){
 }
 
 getControl();
-setInterval(getMonitoring, 3000);
+setInterval(getMonitoring, 10000);
